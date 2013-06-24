@@ -15,7 +15,6 @@ When(/^I press "(.*?)"$/) do |arg1|
 end
 
 Then(/^I should see "(.*?)"$/) do |text|
-	p "@#{text}@"
   if page.respond_to? :should
     page.should have_content(text)
   else
@@ -26,5 +25,8 @@ end
 Then(/^I should be on the project page for "(.*?)"$/) do |arg1|
    project_path(Project.find_by_name!(arg1))
 end
+
+
+
 
 
