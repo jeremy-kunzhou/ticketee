@@ -59,6 +59,7 @@ GEM
       rails (~> 3.0)
     database_cleaner (1.0.1)
     diff-lcs (1.2.4)
+    dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -151,6 +152,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0)
   cucumber-rails
   database_cleaner
+  dynamic_form
   jquery-rails
   rails (= 3.1.0)
   rspec-rails (~> 2.5)
