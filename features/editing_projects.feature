@@ -14,6 +14,7 @@ Feature: Editing Projects
 		And I press "Update Project"
 		Then I should see "Project has been updated"
 		Then I should see on the project page for "TextMate 2 beta"
+
 	Scenario: Updating a project with invalid attributes is bad
 		And I fill in "Name" with ""
 		And I press "Update Project"
