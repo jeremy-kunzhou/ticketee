@@ -25,6 +25,9 @@ end
 Then(/^I should be on the project page for "(.*?)"$/) do |arg1|
    project_path(Project.find_by_name!(arg1))
 end
+Then(/^I should see on the project page for "(.*?)"$/) do |arg1|
+  project_path(Project.find_by_name!(arg1))
+end
 
 
 
