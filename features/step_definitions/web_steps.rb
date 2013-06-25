@@ -29,6 +29,13 @@ Then(/^I should see on the project page for "(.*?)"$/) do |arg1|
   project_path(Project.find_by_name!(arg1))
 end
 
+Then(/^I should not see "(.*?)"$/) do |arg1|
+   if page.respond_to? :should
+    page.should have_no_content(arg1)
+  else
+    assert page.has_no_content?(arg1)
+  end
+end
 
 
 
