@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
 	before_filter :find_project
 	before_filter :find_ticket, :only => [:show, :destroy, :update, :edit]
+	before_filter :authenticate_user!, :except => [:index, :show]
 
 	def new
 		@ticket = @project.tickets.build
@@ -32,6 +33,13 @@ class TicketsController < ApplicationController
 		else
 			flash[:alert] = "Ticket has not been updated."
 			render :action => "edit"
+		end
+	end
+
+	def destroy
+		if @ticket.destroy
+			flash[:notice] = "Ticket has been deleted."
+			redirect_to @project
 		end
 	end
 

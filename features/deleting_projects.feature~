@@ -4,7 +4,7 @@ Feature:
 	I should be able to delete project
 
 	Scenario: Delete Project
-		Given There is a project called "TextMate 2"
+		Given there is a project called "TextMate 2"
 		And I am on the homepage
 		When I follow "TextMate 2"
 		And I follow "Remove Project"

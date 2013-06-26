@@ -4,12 +4,15 @@ Feature:
 	I want to be able to check the tickets of some project
 
 	Background:
-		Given there is a project called "TextMate 2"
-		And that project has a ticket
+		Given there are the following users:
+			|email|password|
+			|user@ticketee.com|password|
+		And there is a project called "TextMate 2"
+		And "user@ticketee.com" has created a ticket for this project:
 			|title|description|
 			|Make it shiny!|Gradients! Starbursts! Oh my!|
 		And there is a project called "Internet Explorer"
-		And that project has a ticket
+		And "user@ticketee.com" has created a ticket for this project:
 			|title|description|
 			|Standards compliance|Isn't a joke.|
 		And I am on the homepage
