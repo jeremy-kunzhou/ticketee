@@ -1,0 +1,3 @@
+class Admin::BaseController < ApplicationController
+	before_filter :authroze_admin!
+end
