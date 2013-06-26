@@ -13,7 +13,12 @@
 	</div>
 <% end %>
 <h1><%= link_to "Ticketee", root_path %></h1>
-<nav><%= link_to "Sign up", new_user_registration_path %></nav>
+<% if user_signed_in? %>
+	Signed in as <%= current_user.email %>
+<% else %>
+	<nav><%= link_to "Sign up", new_user_registration_path %></nav>
+	<%= link_to "Sign in", new_user_session_path %>
+<% end %>
 <%= yield %>
 
 </body>
