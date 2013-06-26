@@ -5,3 +5,4 @@
 <p><%= @ticket.description %></p>
 <h3>Belongs to</h3>
 <p><%= @project.name %></p>
+<p><%= link_to "Edit Ticket", edit_project_ticket_path(@project, @ticket) %></p>
