@@ -1,0 +1,7 @@
+<h2>Ticket</h2>
+<h3>Title</h3>
+<p><%= @ticket.title %></p>
+<h3>Description</h3>
+<p><%= @ticket.description %></p>
+<h3>Belongs to</h3>
+<p><%= @project.name %></p>
