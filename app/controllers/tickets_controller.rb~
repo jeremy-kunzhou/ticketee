@@ -47,11 +47,8 @@ class TicketsController < ApplicationController
 
 private
 	def find_project
-
-		printf "ticket controller #{current_user} id: #{params[:id]} #{params.inspect}"
 		@project = Project.for(current_user).find(params[:project_id])
 		rescue ActiveRecord::RecordNotFound
-			p "ticket controller The project you were looking for could not be found."
 			flash[:alert] = "The project you were looking for could not be found."
 			redirect_to root_path
 	end
