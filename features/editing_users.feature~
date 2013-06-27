@@ -10,12 +10,12 @@ Feature:
 		And I am signed in as them
 
 		Given there are the following users:
-			|email|password|admin|
-			|user@ticketee.com|password|false|
+			|email|password|
+			|user@ticketee.com|password|
 		Given I am on the homepage
 		When I follow "Admin"
 		And I follow "Users"
-		And I follow "user@ticktee.com"
+		And I follow "user@ticketee.com"
 		And I follow "Edit User"
 
 		Scenario: Updating a user's detials

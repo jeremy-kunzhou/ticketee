@@ -36,3 +36,8 @@ Feature:
 			And I press "Update User"
 			Then I should see "User has not been updated."
 			And I should see "Email is invalid"
+
+		Scenario: Users cannot delete themselves
+			When I follow "admin@ticketee.com"
+			And I follow "Delete User"
+			Then I should see "You cannot delete yourself!"
