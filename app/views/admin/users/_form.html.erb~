@@ -1,4 +1,4 @@
-<%= form_for (:admin, @user) do |f| %>
+<%= form_for [:admin, @user] do |f| %>
 <%= f.error_messages %>
 <p>
 	<%= f.label :email %>
@@ -7,6 +7,10 @@
 <p>
 	<%= f.label :password %>
 	<%= f.password_field :password %>
+</p>
+<p>
+	<%= f.check_box :admin %>
+	<%= f.label :admin, "Is an admin?" %>
 </p>
 <%= f.submit %>
 <% end %>

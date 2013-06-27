@@ -11,7 +11,7 @@ class Admin::UsersController < Admin::BaseController
 		@user = User.new(params[:user])
 		if @user.save
 			flash[:noctice] = "User has been created."
-			redirect_to admin_user_path
+			redirect_to admin_users_path
 		else
 			flash[:alert] = "User has not been created."
 			render :action => "new"

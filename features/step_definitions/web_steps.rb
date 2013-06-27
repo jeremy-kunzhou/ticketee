@@ -47,6 +47,10 @@ Then(/^I should not see "(.*?)"$/) do |arg1|
   end
 end
 
+When(/^I check "(.*?)"$/) do |field|
+  check(field)
+end
+
 
 
 
