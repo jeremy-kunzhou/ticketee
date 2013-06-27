@@ -3,16 +3,18 @@ Feature:
 	As a user
 	I want to be able to select a project and create tickets for it
 
-	Background:
-		Given there is a project called "Internet Explorer"
-		And there are the following users:
-			|email|password|
-			|user@ticketee.com|password|
-		And "user@ticketee.com" can view the "Internet Explorer" project
-		And I am signed in as them
-		And I am on the homepage
-		When I follow "Internet Explorer"
-		And I follow "New Ticket"
+  Background:
+    Given there is a project called "Internet Explorer"
+    And there are the following users:
+      | email             | password |
+      | user@ticketee.com | password |
+    And "user@ticketee.com" can view the "Internet Explorer" project
+    And "user@ticketee.com" can tag the "Internet Explorer" project
+    And "user@ticketee.com" can create tickets in the "Internet Explorer" project
+    And I am signed in as them
+    And I am on the homepage
+    When I follow "Internet Explorer"
+    And I follow "New Ticket"
 
 
 	Scenario: Creating a ticket

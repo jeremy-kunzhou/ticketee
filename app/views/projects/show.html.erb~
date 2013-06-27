@@ -8,9 +8,11 @@
 </title>
 <h2>Project detail</h2>
 <%= @project.name %>
+<%= admins_only do %>
 <%= link_to "Edit Project", edit_project_path(@project) %>
 <%= link_to "Remove Project", @project, :method => :delete,
 		:confirm => "Are you sure you want to delete this project?" %>
+<% end %>
 <%= link_to "New Ticket", new_project_ticket_path(@project) %>
 <ul id = "ticket">
 	<% @project.tickets.each do |ticket| %>

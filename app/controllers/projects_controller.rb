@@ -23,10 +23,7 @@ class ProjectsController < ApplicationController
 
 	def show
 		#@project = Project.find(params[:id])
-		respond_to do |f|
-			f.json {render @project}
-			f.html
-		end
+		
 	end
 
 	def edit
