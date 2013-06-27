@@ -18,7 +18,6 @@
 	Signed in as <%= current_user.email %>
 	<%= admins_only do %>
 	<%= link_to "Admin", admin_root_path %>
-	<%= p admin_root_path %>
 	<% end %>
 <% else %>
 	<%= link_to "Sign up", new_user_registration_path %>
