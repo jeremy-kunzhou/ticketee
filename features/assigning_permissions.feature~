@@ -23,7 +23,7 @@ Feature: Assigning permissions
 		And I follow "Permissions"
 
 		Scenario: View a project
-			When I check "View" for "TextMate 2"
+			When I a check "View" for "TextMate 2"
 			And I press "Update"
 			And I follow "Sign out"
 
@@ -31,8 +31,8 @@ Feature: Assigning permissions
 			Then I should see "TextMate 2"
 
 		Scenario: Creating a ticket a project
-			When I check "View" for "TextMate 2"
-			When I check "Create tickets" for "TextMate 2"
+			When I check a "View" for "TextMate 2"
+			When I check a "Create tickets" for "TextMate 2"
 			And I press "Update"
 			And I follow "Sign out"
 
@@ -45,8 +45,8 @@ Feature: Assigning permissions
 			Then I should see "Ticket has been created."
 
 		Scenario: Updating a ticket a project
-			When I check "View" for "TextMate 2"
-			When I check "Edit Tickets" for "TextMate 2"
+			When I check a "View" for "TextMate 2"
+			When I check a "Edit Tickets" for "TextMate 2"
 			And I press "Update"
 			And I follow "Sign out"
 
@@ -60,8 +60,8 @@ Feature: Assigning permissions
 			Then I should see "Ticket has been updated."
 
 		Scenario: Deleting a ticket a project
-			When I check "View" for "TextMate 2"
-			When I check "Delete tickets" for "TextMate 2"
+			When I check a "View" for "TextMate 2"
+			When I check a "Delete Tickets" for "TextMate 2"
 			And I press "Update"
 			And I follow "Sign out"
 

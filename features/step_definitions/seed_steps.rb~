@@ -1,0 +1,4 @@
+Given(/^I have run the seed task$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
