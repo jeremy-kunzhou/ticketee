@@ -8,6 +8,7 @@ class TicketsController < ApplicationController
 
 	def new
 		@ticket = @project.tickets.build
+		3.times = { @ticket.assets.build }
 	end
 
 	def create
@@ -73,7 +74,7 @@ private
 	end
 
 	def authorize_delete!
-		if !curent_user.admin? && cannot?(:"delete tickets", @project)
+		if !current_user.admin? && cannot?(:"delete tickets", @project)
 			flash[:alert] = "You cannot delete tickets from this project."
 			redirect_to @project
 		end
