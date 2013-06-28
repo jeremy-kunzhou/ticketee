@@ -20,7 +20,6 @@
 	<%= link_to "Admin", admin_root_path %>
 	<% end %>
 <% else %>
-	<%= link_to "Sign up", new_user_registration_path %>
 	<%= link_to "Sign In", new_user_session_path %>
 <% end %>
 </nav>

@@ -1,3 +1,3 @@
 <%= @user %>
 <%= link_to "Edit User", edit_admin_user_path(@user) %>
-<%= link_to "Delete User", [:admin,@user], :method => :destroy, :confirm => "Are you sure to delete user?" %>
+<%= link_to "Delete User", admin_user_path(@user), :method => :delete, :confirm => "Are you sure to delete user?" %>
