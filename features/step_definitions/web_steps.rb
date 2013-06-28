@@ -51,6 +51,14 @@ When(/^I check "(.*?)"$/) do |field|
   check(field)
 end
 
+When(/^I attach the file "(.*?)" to "(.*?)"$/) do |path, field|
+  attach_file(field, File.expand_path(path))
+end
+
+Then(/^I should see a "(.*?)" within "(.*?)"$/) do |text, element|
+  pending # express the regexp above with the code you wish you had
+end
+
 
 
 

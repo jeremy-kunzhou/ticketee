@@ -1,9 +1,15 @@
 <%= form_for [@project, @ticket] do |f| %>
+	<%= f.error_messages %>
 	<p>
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 		<%= f.label :description %>
 		<%= f.text_area :description %>
+		<p>
+			<%= f.label :asset, "File" %>
+			<%= f.file_field :asset %>
+		</p>
 		<%= f.submit %>
 	</p>
+
 <% end %>

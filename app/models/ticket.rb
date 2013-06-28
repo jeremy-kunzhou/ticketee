@@ -1,4 +1,5 @@
 class Ticket < ActiveRecord::Base
+	has_attached_file :asset
   belongs_to :project
 	belongs_to :user
 	validates :title, :presence => true

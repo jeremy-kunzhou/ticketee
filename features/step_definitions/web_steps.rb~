@@ -47,7 +47,15 @@ Then(/^I should not see "(.*?)"$/) do |arg1|
   end
 end
 
-When(/^I check "(.*?)"$/) do |arg1|
+When(/^I check "(.*?)"$/) do |field|
+  check(field)
+end
+
+When(/^I attach the file "(.*?)" to "(.*?)"$/) do |path, field|
+  attach_file(field, File.expand_path(path))
+end
+
+Then(/^I should see a "(.*?)" within "(.*?)"$/) do |arg1, arg2|
   pending # express the regexp above with the code you wish you had
 end
 

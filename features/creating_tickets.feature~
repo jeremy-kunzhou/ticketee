@@ -3,17 +3,18 @@ Feature:
 	As a user
 	I want to be able to select a project and create tickets for it
 
-	Background:
-		Given there is a project called "Internet Explorer"
-		And there are the following users:
-			|email|password|
-			|user@ticketee.com|password|
-		And I am signed in as them
-		And "user@ticketee.com" can view the "Internet Explorer" project
-		And "user@ticketee.com" can create tickets in the "Internet Explorer" project
-		And I am on the homepage
-		When I follow "Internet Explorer"
-		And I follow "New Ticket"
+  Background:
+    Given there is a project called "Internet Explorer"
+    And there are the following users:
+      | email             | password |
+      | user@ticketee.com | password |
+    And "user@ticketee.com" can view the "Internet Explorer" project
+    And "user@ticketee.com" can tag the "Internet Explorer" project
+    And "user@ticketee.com" can create tickets in the "Internet Explorer" project
+    And I am signed in as them
+    And I am on the homepage
+    When I follow "Internet Explorer"
+    And I follow "New Ticket"
 
 
 	Scenario: Creating a ticket
@@ -36,3 +37,11 @@ Feature:
 		And I press "Create Ticket"
 		Then I should see "Ticket has not been created."
 		And I should see "Description is too short"
+
+	Scenario: Creating a ticket with an attachment
+		When I fill in "Title" with "Add documentation for blink tag"
+		And I fill in "Description" with "The blink tag has a speed attribute"
+		And I attach the file "spec/fixtures/speed.txt" to "File"
+		And I press "Create Ticket"
+		Then I should see "Ticket has been created."
+		Then I should see a "speed.txt" within "#ticket .asset"
