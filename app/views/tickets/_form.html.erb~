@@ -6,13 +6,10 @@
 		<%= f.label :description %>
 		<%= f.text_area :description %>
 		<% number = 0 %>
-		<%= f.fields_for :assets do |asset| %>
-			<p>
-				<% p "File ##{number += 1 }" %>
-				<%= asset.label :asset, "File" %>
-				<%= asset.file_field :asset %>
-			</p>
-		<% end %>
+		<div id = 'files'>
+			<%= render :partial => "files/form", :locals => { :number => number } %>
+		</div>
+		<%= link_to "Add another file", new_file_path, :remote => true, :update => "files", :position => "after" %>
 		<%= f.submit %>
 	</p>
 
