@@ -24,6 +24,7 @@ class TicketsController < ApplicationController
 
 	def show
 		@comment = @ticket.comments.build
+		@states = State.all
 	end
 
 	def edit
@@ -55,7 +56,6 @@ private
 			flash[:alert] = "The project you were looking for could not be found."
 			redirect_to root_path
 		end
-		printf "#{@project.inspect} project hhh rind project"
 	end
 
 	def find_ticket

@@ -4,9 +4,9 @@
 <h3>Description</h3>
 <p><%= @ticket.description %></p>
 <h3>Belongs to</h3>
-<%= printf "#{@project.inspect} project show view" %>
 <p><%= @ticket.project.name %></p>
 <small>Created by <%= @ticket.user.email %></small>
+<%= render @ticket.state if @ticket.state %>
 <%= simple_format(@ticket.description) %>
 
 <% if @ticket.assets.exists? %>
