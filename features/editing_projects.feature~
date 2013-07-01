@@ -9,6 +9,7 @@ Feature: Editing Projects
 			|user@ticketee.com|password|true|
 		And I am signed in as them
 		Given there is a project called "TextMate 2"
+		And "user@ticketee.com" can view the "TextMate 2" project
 		And I am on the homepage
 		When I follow "TextMate 2"
 		And I follow "Edit Project"

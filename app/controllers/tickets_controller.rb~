@@ -8,7 +8,7 @@ class TicketsController < ApplicationController
 
 	def new
 		@ticket = @project.tickets.build
-		3.times { @ticket.assets.build }
+		@ticket.assets.build
 	end
 
 	def create
@@ -23,7 +23,7 @@ class TicketsController < ApplicationController
 	end
 
 	def show
-		
+		@comment = @ticket.comments.build
 	end
 
 	def edit
@@ -49,10 +49,13 @@ class TicketsController < ApplicationController
 
 private
 	def find_project
-		@project = Project.for(current_user).find(params[:project_id])
+		begin
+			@project = Project.for(current_user).find(params[:project_id])
 		rescue ActiveRecord::RecordNotFound
 			flash[:alert] = "The project you were looking for could not be found."
 			redirect_to root_path
+		end
+		printf "#{@project.inspect} project hhh rind project"
 	end
 
 	def find_ticket

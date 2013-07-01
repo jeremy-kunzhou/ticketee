@@ -55,10 +55,12 @@ When(/^I attach the file "(.*?)" to "(.*?)"$/) do |path, field|
   attach_file(field, File.expand_path(path))
 end
 
-Then(/^I should see a "(.*?)" within "(.*?)"$/) do |arg1, arg2|
+Then(/^I should see a "(.*?)" within "(.*?)"$/) do |text, element|
   pending # express the regexp above with the code you wish you had
 end
 
-
+Then /^show me the page$/ do
+  save_and_open_page
+end
 
 
