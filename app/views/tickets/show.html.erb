@@ -5,7 +5,7 @@
 	<h3>Description</h3>
 	<p><%= @ticket.description %></p>
 	<h3>Belongs to</h3>
-	<p><%= @ticket.project.name %></p>
+	<p><%= link_to "#{@ticket.project.name}", [@ticket.project] %></p>
 	<small>Created by <%= @ticket.user.email %></small>
 	<%= render @ticket.state if @ticket.state %>
 	<%= simple_format(@ticket.description) %>

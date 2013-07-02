@@ -7,7 +7,7 @@ module TicketsHelper
 					
           "#{render comment.previous_state} -> #{render comment.state}".html_safe
         else
-          render(comment.state)
+          "->" + render(comment.state)
         end
       end
     end

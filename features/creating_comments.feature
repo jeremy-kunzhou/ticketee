@@ -30,10 +30,11 @@ Feature: Creating comments
 		Then I should see "Comment has not been created."
 		And I should see "Text can't be blank"
 
-	Scenario: Changing a tickets' state
+	Scenario: Changing a ticket's state
 		When I follow "Change a ticket's state"
 		When I fill in "Text" with "This is a real issus"
 		And I select "Open" from "State"
-		And I press "Create Comment"
-		Then I should see "Comment has been created."
-		And I should see "Open" within "#ticket .state"
+    And I press "Create Comment"
+    Then I should see "Comment has been created."
+  #  And I should see "Open" within "#ticket .state"
+  #  Then I should see "State: Open" within "#comments"
