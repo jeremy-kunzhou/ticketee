@@ -1,4 +1,5 @@
-require'cancan'
+require	'cancan'
+require 'searcher'
 module ApplicationHelper
 	def title(*parts)
 		unless parts.empty?

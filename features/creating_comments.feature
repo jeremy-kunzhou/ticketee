@@ -19,7 +19,6 @@ Feature: Creating comments
 		And I follow "TicketeeBeta"
 
 	Scenario: Creating a comment
-		Then show me the page
 		When I follow "Change a ticket's state"
 		And I fill in "Text" with "Added a comment"
 		And I press "Create Comment"

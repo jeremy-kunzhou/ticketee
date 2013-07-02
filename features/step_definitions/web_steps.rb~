@@ -33,7 +33,7 @@ World(WithinHelpers)
 
 # Single-line step scoper
 When /^(.*) within ([^:]+)$/ do |step, parent|
-  with_scope(parent) { steps(When "#{step}")}
+  with_scope(parent) { steps("When #{step}")}
 end
 
 # Multi-line step scoper
@@ -207,5 +207,5 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
 end
 
 Then /^show me the page$/ do
-  save_and_open_page
+ false# save_and_open_page
 end

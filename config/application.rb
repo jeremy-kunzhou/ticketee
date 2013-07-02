@@ -3,6 +3,7 @@ require 'devise'
 require 'rails/all'
 require 'paperclip'
 
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require *Rails.groups(:assets => %w(development test))
