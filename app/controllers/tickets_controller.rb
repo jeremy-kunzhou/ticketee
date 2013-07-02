@@ -51,6 +51,11 @@ class TicketsController < ApplicationController
 		end
 	end
 
+	def search
+		@tickets = @project.tickets.search(params[:search])
+		render :template => "projects/show"
+	end
+
 private
 	def find_project
 		begin

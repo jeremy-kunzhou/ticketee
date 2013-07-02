@@ -4,7 +4,11 @@ Ticketee::Application.routes.draw do
 	get '/awaiting_confirmation', :to => "users#confirmation", :as => 'confirm_user'
 	root :to => "projects#index"
 	resources :projects do
-		resources :tickets
+		resources :tickets do
+			collection do
+				get :search
+			end
+		end
 	end
 
 	resources :tickets do

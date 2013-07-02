@@ -153,6 +153,8 @@ GEM
       railties (~> 3.1.0)
       sass (>= 3.1.10)
       tilt (~> 1.3.2)
+    searcher (0.0.6)
+      activerecord (~> 3.0)
     selenium-webdriver (2.33.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -198,6 +200,7 @@ DEPENDENCIES
   rails (= 3.1.0)
   rspec-rails (~> 2.5)
   sass-rails (~> 3.1.0)
+  searcher
   selenium-webdriver
   sqlite3
   turn
