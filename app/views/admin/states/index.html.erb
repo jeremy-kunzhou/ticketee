@@ -2,8 +2,13 @@
 <%= link_to "New State", new_admin_state_path %>
 <ul>
 	<% for state in @states %>
-		<li>
+		<li id='state_<%= state.id %>'>
 			<%= state.name %>
+			<% if state.default? %>
+				(Default)
+			<% else %>
+				<%= link_to "Make Default", make_default_admin_state_path(state) %>
+			<% end %>
 		</li>
 	<% end %>
 </ul>

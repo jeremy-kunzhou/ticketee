@@ -3,7 +3,7 @@
 <ul>
 	<% for state in @states %>
 		<li>
-			<%= state %>
+			<%= state.name %>
 		</li>
 	<% end %>
 </ul>
