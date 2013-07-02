@@ -1,0 +1,9 @@
+<h3>States</h3>
+<%= link_to "New State", new_admin_state_path %>
+<ul>
+	<% for state in @states %>
+		<li>
+			<%= state %>
+		</li>
+	<% end %>
+</ul>

@@ -7,7 +7,7 @@ Feature: Creating states
 		Given there are the following users:
 			|email|password|admin|
 			|admin@ticketee.com|password|true|
-		And i am signed in as them
+		And I am signed in as them
 	
 	Scenario: Creating a state
 		When I follow "Admin"
