@@ -8,7 +8,7 @@ describe CommentsController do
 		project.tickets.create(:title => "State transitions", :description => "Can't be hacked.", :user => user)
 	end
 
-	let(:state) (State.create!(:name => "New") )
+	let(:state) {State.create!(:name => "New") }
 
 	context "a user without permission to set state" do
 		before do
