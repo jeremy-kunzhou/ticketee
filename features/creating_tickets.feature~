@@ -45,8 +45,6 @@ Feature:
 		And I attach the file "spec/fixtures/speed.txt" to "File #1"
 		And I press "Create Ticket"
 		Then I should see "speed.txt"
-		And I should see "spin.txt"
-		And I should see "gradient.txt"
 
 	@javascript
 	Scenario: Creating a ticket with more than one attachment

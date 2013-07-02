@@ -30,13 +30,14 @@
 	<%= authorized?("delete tickets", @project) do %>
 	<p><%= link_to "Delete Ticket", [@project, @ticket], :method => :delete, :confirm => "Are you sure you want to delete this project?"%></p>
 	<% end %>
-	<h3>Comments</h3>
-	<div id = 'comments'>
-		<% if @ticket.comments.exists? %> <co id ='ch10_191_1' />
-			<%= render @ticket.comments.select(&:persisted?) %>
-		<% else %>
-			There are no comments for this tickets.
-		<% end %>
-	</div>
-	<%= render "comments/form" %>
 </div>
+<h3>Comments</h3>
+<div id = 'comments'>
+	<% if @ticket.comments.exists? %> <co id ='ch10_191_1' />
+		<%= render @ticket.comments.select(&:persisted?) %>
+	<% else %>
+		There are no comments for this tickets.
+	<% end %>
+</div>
+<%= render "comments/form" %>
+
