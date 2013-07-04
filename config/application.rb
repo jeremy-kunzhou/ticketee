@@ -48,5 +48,7 @@ module Ticketee
     config.assets.version = '1.0'
 
 		config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+		config.active_record.observers = :comment_observer
   end
 end

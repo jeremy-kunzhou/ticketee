@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
 	before_create :set_previous_state
 	after_create :set_ticket_state
-
+	after_create :creator_watches_me
 	validates :text, :presence => true
 	belongs_to :user
 	belongs_to :ticket
@@ -18,7 +18,11 @@ private
 	end
 
 	def set_previous_state
-		self.ticket.previous_state = self.ticket.state
+		self.previous_state = self.state
 	end
+
+  def creator_watches_ticket
+    self.ticket.watchers << user
+  end
 
 end
