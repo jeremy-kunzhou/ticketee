@@ -9,7 +9,16 @@
 	<small>Created by <%= @ticket.user.email %></small>
 	<%= render @ticket.state if @ticket.state %>
 	<%= simple_format(@ticket.description) %>
-	<div id='tags'><%= render "tags/form" %></div>
+	<div id='tags'><%= render @ticket.tags %></div>
+	<div id='watchers'>
+		<%= toggle_watching_button %>
+		<h2>Wathcers</h2>
+		<ul>
+		<%= @ticket.watchers.each do |user| %>
+			<li><%= user.email %></li>
+		<% end %>
+		</ul>
+	</div>
 	<% if @ticket.assets.exists? %>
 		<h3>Attached Files</h3>
 		<div class = "assets" >
