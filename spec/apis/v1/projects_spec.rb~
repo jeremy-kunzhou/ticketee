@@ -15,12 +15,11 @@ describe "/api/v1/projects", :type => :api do
 		
 		before do
 			FactoryGirl.create(:project, :name => "Access Denied")
-			sign_in(:user, user)
 		end
 
 		let(:url) { "/api/v1/projects" }
 		it "json" do
-			get "#{url}.json"
+			get "#{url}.json", :token => token
 
 			projects_json = Project.for(user).all.to_json
 			last_response.body.should eql(projects_json)
@@ -37,6 +36,14 @@ describe "/api/v1/projects", :type => :api do
 				p["name"] == "Access Denied"
 			end.should be_false
 
+		end
+
+		it "XML" do
+			get "#{url}.xml", :token => token
+			last_response.body.should eql(Project.readable_by(user).to_xml)
+			projects = Nokogiri::XML(last_response.body)
+			p "#{projects.inspect}"
+			projects.css("project name").text.should eql("Ticketee")
 		end
 	end
 	
