@@ -9,7 +9,14 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 	has_many :permissions
+
+	def self.reset_request_count!
+		update_all("request_count = 0", "request_count > 0")
+	end
+
 	def to_s
 		"#{email} (#{admin? ? "Admin" : "User"})"
 	end
+
+
 end
