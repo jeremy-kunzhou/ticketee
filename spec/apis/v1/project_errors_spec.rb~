@@ -9,7 +9,7 @@ describe "Project API erros", :type => :api do
 			error = { :error => "You must be an admin to do that." }
 			p "#{last_response.inspect}"
 			last_response.body.should eql(error.to_json)
-			last_response.code.should eql(401)
+			last_response.status.should eql(401)
 			Project.find_by_name("Ticketee").should be_nil
 		end
 	end
