@@ -23,4 +23,7 @@ describe "Project API erros", :type => :api do
 			last_response.body.should eql(error.to_json)
 		end
 	end
+
+
+ 			
 end

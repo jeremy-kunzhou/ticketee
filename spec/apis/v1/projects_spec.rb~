@@ -83,14 +83,31 @@ describe "/api/v1/projects", :type => :api do
 		it "JSON" do
 			get "#{url}.json", :token => token
 			project = @project.to_json(:methods => "last_ticket" )
-			p "#{last_response.body.inspect}"
-			p "#{project}"
+			
 			last_response.body.should eql(project)
 			last_response.status.should eql(200)
-			p "#{JSON.parse(last_response.body)}"
+			
 			project_response = JSON.parse(last_response.body)
 			ticket_title = project_response["last_ticket"]["title"]
 			ticket_title.should_not be_blank
+		end
+	end
+
+	context "updating a project" do
+		before do
+			user.admin = true
+			user.save
+		end
+	
+		let(:url) {"/api/v1/projects/#{@project.id}" }
+		it "successful JSON" do
+			@project.name.should eql("Ticketee")
+			put "#{url}.json", :token => token, :project => {:name=>"Not Ticketee"}
+			last_response.status.should eql(200)
+
+			@project.reload
+			@project.name.should eql("Not Ticketee")
+			last_response.body.should eql("{}")
 		end
 	end
 	
