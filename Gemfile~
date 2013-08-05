@@ -45,6 +45,7 @@ group :test do
 	gem 'devise', '~> 1.4.3'
 	gem 'cancan'
 	gem 'paperclip'
+	gem 'searcher'
 	gem 'selenium-webdriver'
 	gem 'email_spec'
 end
