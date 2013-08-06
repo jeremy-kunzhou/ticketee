@@ -4,6 +4,6 @@ describe Notifier do
   it "correctly sets the reply-to" do
 		comment = FactoryGirl.create(:comment)
 		mail = ActionMailer::Base.deliveries.last
-		mail.from.should eql(["testerticketee+#{comment.project.id}+#{comment.ticket.id}@gmail.com"])
+		mail.from.should eql("testerticketee+#{comment.project.id}+#{comment.ticket.id}@gmail.com")
 	end
 end
